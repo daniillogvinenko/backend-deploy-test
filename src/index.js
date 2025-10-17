@@ -1,6 +1,13 @@
 const express = require("express");
+const cors = require("cors");
 const app = express();
 const port = 3000;
+
+app.use(
+    cors({
+        origin: ["https://localhost:5173, http://testingdeploy.ru"],
+    })
+);
 
 app.get("/api/users", (req, res) => {
     res.json([
